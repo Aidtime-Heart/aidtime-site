@@ -7,10 +7,10 @@
 <meta name="description" content="上海应援时间医疗科技有限公司——美国心脏协会（AHA）会员单位，提供CPR+AED心肺复苏、First Aid急救等国际认证课程培训，AHA Heartsaver证书全球140余国认可。守护生命，从心开始。">
 <style>
 :root{
-  --red:#E63946; --red-deep:#C1121F; --red-dark:#9A0E1B;
-  --bg:#0A0E14; --bg2:#0F141D; --card:#141B26; --line:rgba(255,255,255,.08);
-  --txt:#EDF1F6; --sub:#94A1B2; --gold:#D8C58A;
-  --radius:16px;
+  --red:#E8363F; --red-deep:#C81E2B; --coral:#FF6B5E; --gold:#F0A93B; --gold-deep:#D18A1B;
+  --bg:#FFFBF9; --bg2:#FFF3F0; --bg3:#FFF8EC; --card:#FFFFFF; --line:#F5DCD6;
+  --txt:#332F3B; --sub:#8A8394; --shadow:0 10px 34px rgba(200,30,43,.09);
+  --radius:18px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -18,53 +18,58 @@ body{background:var(--bg);color:var(--txt);font-family:"PingFang SC","Microsoft 
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-.en{font-family:Georgia,"Times New Roman",serif;letter-spacing:.14em;text-transform:uppercase;color:var(--red);font-size:13px;font-weight:600}
+.en{font-family:Georgia,"Times New Roman",serif;letter-spacing:.14em;text-transform:uppercase;color:var(--red);font-size:13px;font-weight:700}
 h2.sec{font-size:34px;margin:10px 0 16px;line-height:1.3}
 .sec-head{text-align:center;margin-bottom:56px}
 .sec-head p{color:var(--sub);max-width:640px;margin:0 auto}
 section{padding:96px 0;position:relative}
 
 /* ---------- 导航 ---------- */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px);background:rgba(10,14,20,.72);border-bottom:1px solid var(--line)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px);background:rgba(255,251,249,.85);border-bottom:1px solid var(--line)}
 .nav-in{max-width:1180px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:12px}
 .brand img{height:34px}
 .nav-links{display:flex;gap:34px;font-size:15px}
-.nav-links a{color:var(--sub);transition:.25s}
-.nav-links a:hover{color:var(--txt)}
+.nav-links a{color:var(--sub);transition:.25s;font-weight:500}
+.nav-links a:hover{color:var(--red)}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 26px;border-radius:999px;font-size:15px;font-weight:600;cursor:pointer;border:none;transition:.25s}
-.btn-red{background:linear-gradient(135deg,var(--red),var(--red-deep));color:#fff;box-shadow:0 6px 24px rgba(230,57,70,.35)}
-.btn-red:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(230,57,70,.5)}
-.btn-ghost{background:transparent;color:var(--txt);border:1px solid rgba(255,255,255,.28)}
+.btn-red{background:linear-gradient(135deg,#FF5A4E,var(--red) 55%,var(--red-deep));color:#fff;box-shadow:0 8px 24px rgba(232,54,63,.35)}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(232,54,63,.45)}
+.btn-ghost{background:#fff;color:var(--txt);border:1.5px solid #F0C9C2}
 .btn-ghost:hover{border-color:var(--red);color:var(--red)}
 @media(max-width:860px){.nav-links{display:none}}
 
 /* ---------- Hero ---------- */
-.hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 80px;background:radial-gradient(1000px 520px at 78% 18%,rgba(230,57,70,.16),transparent 62%),radial-gradient(700px 480px at 8% 88%,rgba(216,197,138,.07),transparent 60%),var(--bg)}
+.hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 90px;position:relative;overflow:hidden;
+  background:
+   radial-gradient(900px 480px at 82% 8%,rgba(255,107,94,.20),transparent 62%),
+   radial-gradient(700px 420px at 6% 92%,rgba(240,169,59,.16),transparent 60%),
+   radial-gradient(560px 400px at 55% 110%,rgba(232,54,63,.10),transparent 60%),
+   linear-gradient(180deg,#FFF6F2,var(--bg))}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;width:100%}
 .hero h1{font-size:56px;line-height:1.22;letter-spacing:.02em;margin:18px 0 22px}
-.hero h1 em{font-style:normal;color:var(--red);position:relative}
+.hero h1 em{font-style:normal;background:linear-gradient(120deg,var(--red),var(--coral) 60%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p.lead{color:var(--sub);font-size:18px;max-width:520px;margin-bottom:36px}
 .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
-.hero-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(230,57,70,.45);background:rgba(230,57,70,.1);color:#ffb3b8;padding:7px 16px;border-radius:999px;font-size:13.5px}
-.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(230,57,70,.7);animation:pulse 1.6s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(230,57,70,0)}100%{box-shadow:0 0 0 0 rgba(230,57,70,0)}}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;border:1.5px solid rgba(232,54,63,.4);background:rgba(232,54,63,.07);color:var(--red-deep);padding:7px 16px;border-radius:999px;font-size:13.5px;font-weight:600}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(232,54,63,.7);animation:pulse 1.6s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(232,54,63,0)}100%{box-shadow:0 0 0 0 rgba(232,54,63,0)}}
 .hero-visual{position:relative;display:flex;justify-content:center}
-.hero-visual .ring{position:absolute;inset:0;margin:auto;width:340px;height:340px;border:1px dashed rgba(230,57,70,.4);border-radius:50%;animation:spin 26s linear infinite}
-.hero-visual .ring2{width:440px;height:440px;border-color:rgba(216,197,138,.22);animation-duration:40s;animation-direction:reverse}
+.hero-visual .ring{position:absolute;inset:0;margin:auto;width:340px;height:340px;border:1.5px dashed rgba(232,54,63,.45);border-radius:50%;animation:spin 26s linear infinite}
+.hero-visual .ring2{width:440px;height:440px;border-color:rgba(240,169,59,.45);animation-duration:40s;animation-direction:reverse}
 @keyframes spin{to{transform:rotate(360deg)}}
-.hero-visual img.logo-main{width:290px;height:290px;border-radius:50%;box-shadow:0 24px 80px rgba(230,57,70,.28);position:relative;z-index:2}
+.hero-visual img.logo-main{width:290px;height:290px;border-radius:50%;box-shadow:0 26px 70px rgba(232,54,63,.30);position:relative;z-index:2;border:6px solid #fff}
 #ecg{position:absolute;left:0;right:0;bottom:-6px;width:100%;height:120px;opacity:.9;pointer-events:none}
 .scroll-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);color:var(--sub);font-size:12px;letter-spacing:.3em;writing-mode:vertical-rl;animation:floaty 2.4s ease-in-out infinite}
 @keyframes floaty{50%{transform:translate(-50%,8px)}}
 @media(max-width:960px){.hero-grid{grid-template-columns:1fr;text-align:center}.hero p.lead{margin-left:auto;margin-right:auto}.hero-cta{justify-content:center}.hero-visual{order:-1}.hero h1{font-size:40px}}
 
 /* ---------- 数据条 ---------- */
-.stats{background:linear-gradient(90deg,#12080b,var(--bg2));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats{background:linear-gradient(180deg,#FFF3EF,#FFF9F5);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.stat{text-align:center;padding:34px 12px;border-radius:var(--radius);background:rgba(255,255,255,.02);border:1px solid var(--line);transition:.3s}
-.stat:hover{border-color:rgba(230,57,70,.5);transform:translateY(-4px)}
-.stat b{font-size:40px;color:var(--red);font-variant-numeric:tabular-nums}
+.stat{text-align:center;padding:34px 12px;border-radius:var(--radius);background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);transition:.3s}
+.stat:hover{transform:translateY(-4px);border-color:rgba(232,54,63,.5)}
+.stat b{font-size:40px;background:linear-gradient(120deg,var(--red),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
 .stat span{display:block;color:var(--sub);font-size:14px;margin-top:6px}
 @media(max-width:860px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
 
@@ -72,12 +77,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px);b
 .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
 .about-grid p{color:var(--sub);margin-bottom:16px}
 .value-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
-.value{border:1px solid var(--line);border-radius:12px;padding:12px 20px;background:var(--card);font-size:14.5px}
-.value b{color:var(--gold);display:block;font-size:15px;margin-bottom:2px}
-.aha-card{background:linear-gradient(160deg,rgba(230,57,70,.14),rgba(216,197,138,.06));border:1px solid rgba(230,57,70,.35);border-radius:20px;padding:38px}
+.value{border:1px solid var(--line);border-radius:12px;padding:12px 20px;background:#fff;box-shadow:var(--shadow);font-size:14.5px}
+.value b{color:var(--gold-deep);display:block;font-size:15px;margin-bottom:2px}
+.aha-card{background:linear-gradient(160deg,#FFF0EC,#FFF9EE);border:1px solid #F6CFC4;border-radius:20px;padding:38px;box-shadow:var(--shadow)}
 .aha-card h3{font-size:22px;margin-bottom:14px}
 .aha-card li{list-style:none;color:var(--sub);padding:8px 0 8px 26px;position:relative;font-size:15px}
-.aha-card li::before{content:"";position:absolute;left:0;top:15px;width:10px;height:10px;border-radius:50%;border:2px solid var(--red)}
+.aha-card li::before{content:"";position:absolute;left:0;top:15px;width:10px;height:10px;border-radius:50%;border:2.5px solid var(--red)}
 .about-photos{display:flex;gap:16px;margin-top:26px}
 .about-photos img{border-radius:14px;border:1px solid var(--line);object-fit:cover}
 .about-photos img:first-child{flex:1.6;height:130px}
@@ -87,106 +92,131 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px);b
 /* ---------- 为什么学急救 ---------- */
 .why{background:var(--bg2)}
 .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.why-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 24px;transition:.3s;position:relative;overflow:hidden}
-.why-card::after{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,var(--red),transparent);opacity:0;transition:.3s}
-.why-card:hover{transform:translateY(-6px);border-color:rgba(230,57,70,.45)}
+.why-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 24px;transition:.3s;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.why-card::after{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:linear-gradient(90deg,var(--red),var(--coral),var(--gold));opacity:0;transition:.3s}
+.why-card:hover{transform:translateY(-6px);border-color:rgba(232,54,63,.45)}
 .why-card:hover::after{opacity:1}
-.why-card b{font-size:34px;color:var(--red);display:block;margin-bottom:8px}
+.why-card b{font-size:34px;background:linear-gradient(120deg,var(--red),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent;display:block;margin-bottom:8px}
 .why-card h4{font-size:16.5px;margin-bottom:8px}
 .why-card p{color:var(--sub);font-size:14px}
-.why-quote{margin-top:44px;text-align:center;color:var(--txt);font-size:20px}
+.why-quote{margin-top:44px;text-align:center;font-size:20px}
 .why-quote em{color:var(--red);font-style:normal}
 @media(max-width:960px){.why-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.why-grid{grid-template-columns:1fr}}
 
 /* ---------- 课程 ---------- */
 .course-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-.course{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.3s;display:flex;flex-direction:column}
-.course:hover{transform:translateY(-6px);border-color:rgba(230,57,70,.5);box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.course{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.3s;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.course:hover{transform:translateY(-6px);border-color:rgba(232,54,63,.5);box-shadow:0 26px 60px rgba(232,54,63,.16)}
 .course .banner{height:170px;overflow:hidden}
 .course .banner img{width:100%;height:100%;object-fit:cover;transition:.5s}
 .course:hover .banner img{transform:scale(1.06)}
 .course-body{padding:32px 34px 34px;display:flex;flex-direction:column;flex:1}
-.course .tag{display:inline-block;background:rgba(230,57,70,.14);border:1px solid rgba(230,57,70,.5);color:#ffb3b8;font-size:12.5px;padding:4px 14px;border-radius:999px;margin-bottom:14px;width:fit-content}
+.course .tag{display:inline-block;background:rgba(232,54,63,.08);border:1.5px solid rgba(232,54,63,.45);color:var(--red-deep);font-size:12.5px;font-weight:600;padding:4px 14px;border-radius:999px;margin-bottom:14px;width:fit-content}
 .course h3{font-size:24px;margin-bottom:4px}
-.course .dur{color:var(--gold);font-size:14px;margin-bottom:16px}
+.course .dur{color:var(--gold-deep);font-size:14px;font-weight:600;margin-bottom:16px}
 .course li{list-style:none;color:var(--sub);font-size:14.5px;padding:5px 0 5px 22px;position:relative}
 .course li::before{content:"";position:absolute;left:2px;top:12px;width:8px;height:8px;border-radius:2px;background:var(--red)}
-.price-box{margin:20px 0 16px;border:1px dashed rgba(230,57,70,.45);border-radius:14px;padding:16px 20px;background:rgba(230,57,70,.06)}
+.price-box{margin:20px 0 16px;border:1.5px dashed rgba(232,54,63,.4);border-radius:14px;padding:16px 20px;background:#FFF7F4}
 .price-row{display:flex;justify-content:space-between;align-items:baseline;padding:5px 0;font-size:14.5px;color:var(--sub)}
 .price-row b{font-size:19px;color:var(--txt)}
-.price-row .early b{color:var(--gold);font-size:16px}
+.price-row .early b{color:var(--gold-deep);font-size:16px}
 .price-note{font-size:12.5px;color:var(--sub);margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
 .cert-strip{display:flex;gap:16px;align-items:center;margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
 .cert-strip img{width:88px;border-radius:8px;border:1px solid var(--line)}
 .cert-strip p{font-size:12.5px;color:var(--sub);line-height:1.6}
 .audience{margin-top:44px}
-.audience h4{text-align:center;font-size:18px;margin-bottom:20px;color:var(--txt)}
+.audience h4{text-align:center;font-size:18px;margin-bottom:20px}
 .chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:9px 20px;font-size:14px;color:var(--sub);transition:.25s}
-.chip:hover{border-color:var(--red);color:var(--txt)}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:9px 20px;font-size:14px;color:var(--sub);transition:.25s}
+.chip:hover{border-color:var(--red);color:var(--red);background:#FFF5F3}
 .feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px}
-.feature{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:22px;font-size:14px;color:var(--sub)}
+.feature{border:1px solid var(--line);background:#fff;border-radius:14px;padding:22px;font-size:14px;color:var(--sub);box-shadow:var(--shadow)}
 .feature b{display:block;color:var(--txt);font-size:15px;margin-bottom:6px}
 .feature b::before{content:"✓ ";color:var(--red)}
 @media(max-width:960px){.course-grid,.feature-grid{grid-template-columns:1fr}}
 @media(min-width:961px) and (max-width:1100px){.feature-grid{grid-template-columns:repeat(2,1fr)}}
 
 /* ---------- 活动 ---------- */
-.event{background:linear-gradient(160deg,#150b0e,var(--bg2));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.event{background:linear-gradient(160deg,#FFF0EA,#FFF9EF);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .event-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
 .event-poster{position:relative;display:flex;justify-content:center}
-.event-poster img{width:min(340px,100%);border-radius:18px;border:1px solid rgba(216,197,138,.4);box-shadow:0 30px 80px rgba(0,0,0,.55)}
-.event-poster::before{content:"";position:absolute;inset:0;margin:auto;width:380px;height:380px;border:1px dashed rgba(230,57,70,.35);border-radius:50%;animation:spin 30s linear infinite}
-.event-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(216,197,138,.5);background:rgba(216,197,138,.08);color:var(--gold);padding:6px 16px;border-radius:999px;font-size:13px}
+.event-poster img{width:min(340px,100%);border-radius:18px;border:1px solid rgba(240,169,59,.5);box-shadow:0 30px 70px rgba(200,30,43,.22)}
+.event-poster::before{content:"";position:absolute;inset:0;margin:auto;width:380px;height:380px;border:1.5px dashed rgba(232,54,63,.4);border-radius:50%;animation:spin 30s linear infinite}
+.event-badge{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(240,169,59,.55);background:rgba(240,169,59,.10);color:var(--gold-deep);padding:6px 16px;border-radius:999px;font-size:13px;font-weight:600}
 .event h2{font-size:38px;margin:16px 0 10px}
-.event .date{color:var(--gold);font-size:17px;margin-bottom:18px}
+.event .date{color:var(--gold-deep);font-size:17px;font-weight:600;margin-bottom:18px}
 .event p.desc{color:var(--sub);max-width:520px;margin-bottom:26px}
 .event-stats{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:30px}
-.event-stat{border:1px solid var(--line);background:rgba(255,255,255,.02);border-radius:14px;padding:14px 22px;text-align:center}
-.event-stat b{display:block;font-size:26px;color:var(--red)}
+.event-stat{border:1px solid var(--line);background:#fff;border-radius:14px;padding:14px 22px;text-align:center;box-shadow:var(--shadow)}
+.event-stat b{display:block;font-size:26px;background:linear-gradient(120deg,var(--red),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
 .event-stat span{font-size:12.5px;color:var(--sub)}
 @media(max-width:960px){.event-grid{grid-template-columns:1fr}.event h2{font-size:30px}}
 
 /* ---------- 导师 ---------- */
-.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.member{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 22px;text-align:center;transition:.3s}
-.member:hover{transform:translateY(-6px);border-color:rgba(230,57,70,.5)}
-.avatar{width:76px;height:76px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--red),var(--red-dark));box-shadow:0 8px 24px rgba(230,57,70,.3)}
-.member h4{font-size:17px}
-.member .role{color:var(--red);font-size:13px;margin:4px 0 10px}
-.member p{color:var(--sub);font-size:13px;line-height:1.6}
-@media(max-width:960px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+.team{background:var(--bg2)}
+.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.member{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.3s;cursor:pointer;box-shadow:var(--shadow)}
+.member:hover{transform:translateY(-6px);border-color:rgba(232,54,63,.5);box-shadow:0 22px 50px rgba(232,54,63,.18)}
+.member .photo{height:210px;overflow:hidden;position:relative}
+.member .photo img{width:100%;height:100%;object-fit:cover;object-position:top;transition:.5s}
+.member:hover .photo img{transform:scale(1.07)}
+.member .photo::after{content:"查看简介 →";position:absolute;left:0;right:0;bottom:0;padding:8px 0;text-align:center;font-size:12.5px;font-weight:600;color:#fff;background:linear-gradient(180deg,transparent,rgba(200,30,43,.85));opacity:0;transition:.3s}
+.member:hover .photo::after{opacity:1}
+.member-info{padding:16px 16px 20px;text-align:center}
+.member-info h4{font-size:17px}
+.member-info .role{color:var(--red);font-size:12.5px;margin-top:3px}
+@media(max-width:1080px){.team-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:680px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- 导师弹窗 ---------- */
+.tmodal{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;background:rgba(51,26,32,.5);backdrop-filter:blur(6px);padding:20px}
+.tmodal.open{display:flex}
+.tmodal-box{background:#fff;border-radius:22px;max-width:760px;width:100%;max-height:88vh;overflow:hidden auto;position:relative;box-shadow:0 40px 100px rgba(0,0,0,.3);animation:pop .3s cubic-bezier(.2,.8,.3,1.2)}
+@keyframes pop{from{transform:scale(.92) translateY(16px);opacity:0}}
+.tmodal-grid{display:grid;grid-template-columns:280px 1fr}
+.tmodal-photo{position:relative;min-height:340px}
+.tmodal-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.tmodal-body{padding:34px 34px 30px}
+.tmodal-body .tag-en{display:inline-block;font-family:Georgia,serif;font-size:12px;letter-spacing:.12em;color:#fff;background:linear-gradient(120deg,var(--red),var(--coral));padding:4px 14px;border-radius:999px;margin-bottom:10px}
+.tmodal-body h3{font-size:26px}
+.tmodal-body .role{color:var(--red);font-weight:600;font-size:14.5px;margin:4px 0 16px}
+.tmodal-body ul{list-style:none}
+.tmodal-body li{color:var(--sub);font-size:14px;padding:5px 0 5px 20px;position:relative}
+.tmodal-body li::before{content:"";position:absolute;left:0;top:12px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.tmodal-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;border:none;background:rgba(255,255,255,.92);color:var(--txt);font-size:18px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.15);z-index:5}
+.tmodal-close:hover{background:var(--red);color:#fff}
+@media(max-width:680px){.tmodal-grid{grid-template-columns:1fr}.tmodal-photo{min-height:240px;position:relative}.tmodal-photo img{position:relative;height:240px}}
 
 /* ---------- 合作 ---------- */
 .case-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.case{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 24px;transition:.3s}
-.case:hover{border-color:rgba(216,197,138,.5);transform:translateY(-5px)}
-.case .ic{width:46px;height:46px;border-radius:12px;background:rgba(216,197,138,.1);border:1px solid rgba(216,197,138,.35);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+.case{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 24px;transition:.3s;box-shadow:var(--shadow)}
+.case:hover{border-color:rgba(240,169,59,.6);transform:translateY(-5px)}
+.case .ic{width:46px;height:46px;border-radius:12px;background:rgba(240,169,59,.12);border:1.5px solid rgba(240,169,59,.45);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
 .case h4{font-size:16px;margin-bottom:6px}
 .case p{color:var(--sub);font-size:13.5px}
 @media(max-width:960px){.case-grid{grid-template-columns:repeat(2,1fr)}}
 
 /* ---------- 联系 ---------- */
-.contact{background:linear-gradient(160deg,#160a0d,var(--bg2));border-top:1px solid var(--line)}
+.contact{background:linear-gradient(160deg,#FFF0EA,#FFF9EF);border-top:1px solid var(--line)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
 .contact-item{display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line)}
-.contact-item .ic{width:46px;height:46px;min-width:46px;border-radius:12px;background:rgba(230,57,70,.12);border:1px solid rgba(230,57,70,.4);display:flex;align-items:center;justify-content:center;font-size:20px}
+.contact-item .ic{width:46px;height:46px;min-width:46px;border-radius:12px;background:rgba(232,54,63,.08);border:1.5px solid rgba(232,54,63,.4);display:flex;align-items:center;justify-content:center;font-size:20px}
 .contact-item b{display:block;font-size:15px;margin-bottom:2px}
 .contact-item span{color:var(--sub);font-size:15px}
-.qr-card{background:var(--card);border:1px solid rgba(230,57,70,.35);border-radius:20px;padding:34px;text-align:center}
+.qr-card{background:#fff;border:1px solid rgba(232,54,63,.3);border-radius:20px;padding:34px;text-align:center;box-shadow:var(--shadow)}
 .qr-card img{width:220px;margin:0 auto 16px;border-radius:14px}
 .qr-card p{color:var(--sub);font-size:14px}
 @media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
 
 /* ---------- 弹窗 / 页脚 ---------- */
-.modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(5,8,12,.7);backdrop-filter:blur(6px)}
+.modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(51,26,32,.5);backdrop-filter:blur(6px)}
 .modal.open{display:flex}
-.modal-box{background:var(--bg2);border:1px solid rgba(230,57,70,.4);border-radius:20px;padding:36px;text-align:center;max-width:340px;width:88%}
+.modal-box{background:#fff;border:1px solid rgba(232,54,63,.35);border-radius:20px;padding:36px;text-align:center;max-width:340px;width:88%}
 .modal-box img{width:210px;margin:0 auto 14px;border-radius:12px}
 .modal-box h3{margin-bottom:6px}
 .modal-box p{color:var(--sub);font-size:14px;margin-bottom:18px}
-.modal-close{margin-top:6px;background:transparent;border:1px solid var(--line);color:var(--sub);padding:9px 30px;border-radius:999px;cursor:pointer;font-size:14px}
+.modal-close{margin-top:6px;background:transparent;border:1.5px solid var(--line);color:var(--sub);padding:9px 30px;border-radius:999px;cursor:pointer;font-size:14px}
 footer{padding:34px 0;border-top:1px solid var(--line);color:var(--sub);font-size:13.5px;text-align:center}
 footer b{color:var(--txt)}
 
@@ -236,7 +266,7 @@ footer b{color:var(--txt)}
 <div class="stats">
   <div class="wrap" style="padding-top:56px;padding-bottom:56px">
     <div class="stats-grid">
-      <div class="stat reveal"><b><span class="count" data-to="55">0</span>万</b><span>我国每年心脏骤停死亡人数</span></div>
+      <div class="stat reveal"><b><span class="count" data-to="55">0</span>万</b><span>我国每年心脏骤停人数</span></div>
       <div class="stat reveal"><b><span class="count" data-to="4">0</span>分钟</b><span>心脏骤停黄金救援时间</span></div>
       <div class="stat reveal"><b>&lt;<span class="count" data-to="1">0</span>%</b><span>我国当前院外抢救存活率</span></div>
       <div class="stat reveal"><b><span class="count" data-to="140">0</span>+国</b><span>AHA急救证书全球认可国家</span></div>
@@ -250,7 +280,7 @@ footer b{color:var(--txt)}
     <div class="reveal">
       <div class="en">About Us</div>
       <h2 class="sec">专业的急救培训<br>守护每一个关键时刻</h2>
-      <p>上海应援时间医疗科技有限公司是<strong style="color:var(--txt)">美国心脏协会（AHA）会员单位</strong>，提供专业的急救培训，涵盖心肺复苏（CPR）、创伤包扎、AED 急救设备使用等知识与技能。</p>
+      <p>上海应援时间医疗科技有限公司是<strong>美国心脏协会（AHA）会员单位</strong>，提供专业的急救培训，涵盖心肺复苏（CPR）、创伤包扎、AED 急救设备使用等知识与技能。</p>
       <p>培训采用理论与实践相结合的方式，注重实际操作和应急反应能力的培养，让学员在遇到紧急情况时能够迅速采取正确的急救措施，为生命争取宝贵的时间。</p>
       <div class="value-row">
         <div class="value"><b>专业</b>国际标准教学体系</div>
@@ -399,25 +429,43 @@ footer b{color:var(--txt)}
 </section>
 
 <!-- 导师 -->
-<section id="team" style="background:var(--bg2)">
+<section class="team" id="team">
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="en">Instructor Team</div>
       <h2 class="sec">导师团队</h2>
-      <p>由美国心脏协会 AHA Heartsaver 认证导师领衔，兼具专业急救资质、丰富赛事保障经验与公益热忱。</p>
+      <p>点击导师卡片，查看完整介绍。团队由美国心脏协会 AHA Heartsaver 认证导师领衔，兼具专业急救资质、丰富赛事保障经验与公益热忱。</p>
     </div>
     <div class="team-grid">
-      <div class="member reveal"><div class="avatar">程</div><h4>程晓鹏</h4><div class="role">培训中心主任 · TCF 主任导师</div><p>AHA Heartsaver 主任导师（TCF），上海应援时间急救培训中心主讲导师 & 联合创始人，复旦健康管理规划师，多届玄奘之路戈壁挑战赛领队。</p></div>
-      <div class="member reveal"><div class="avatar">李</div><h4>李鹏</h4><div class="role">主讲导师 · 马拉松冠军</div><p>AHA Heartsaver 导师，华东理工大学体育讲师，马拉松国家健将水平，全马 PB 2:19:04，长沙国际马拉松男子全程冠军。</p></div>
-      <div class="member reveal"><div class="avatar">王</div><h4>王政东</h4><div class="role">主讲导师 · 越野跑者</div><p>AHA Heartsaver 导师，8年跑龄、30余场马拉松完赛，玄奘之路戈壁挑战赛 A+ 组（单日121km）完赛者。</p></div>
-      <div class="member reveal"><div class="avatar">于</div><h4>于淼</h4><div class="role">主讲导师 · 野外救援</div><p>AHA Heartsaver 导师，WMAI 野外第一响应人（WFR），玄奘之路志愿救援队队员，国家二级心理咨询师。</p></div>
-      <div class="member reveal"><div class="avatar">魏</div><h4>魏文静</h4><div class="role">主讲导师 · 写作者</div><p>AHA Heartsaver 导师，著有《文静品读红楼梦》，多届玄奘之路戈壁挑战赛队长、老A队领队。</p></div>
-      <div class="member reveal"><div class="avatar">李</div><h4>李晓林</h4><div class="role">主讲导师 · 公益大使</div><p>AHA Heartsaver 导师，复旦 EMBA，崇礼168越野赛100公里、莫干山越野赛100公里完赛选手，戈壁挑战赛公益大使。</p></div>
-      <div class="member reveal"><div class="avatar">关</div><h4>关玥玥</h4><div class="role">主讲导师 · 营养健康</div><p>AHA Heartsaver 导师，功能医学营养师，斯坦福、耶鲁健康课程认证，中国营养学会会员。</p></div>
-      <div class="member reveal"><div class="avatar">团队</div><h4>更多认证导师</h4><div class="role">刘沐姗 · 杨玲 · 宋德月</div><p>均为 AHA Heartsaver 认证导师，覆盖医药、幼教、健身、营养等多领域背景，提供小班精细化教学。</p></div>
+      <div class="member reveal" onclick="openTeam('cheng')"><div class="photo"><img src="assets/team/chengxiaopeng.jpg" alt="程晓鹏"></div><div class="member-info"><h4>程晓鹏</h4><div class="role">培训中心主任 · TCF 主任导师</div></div></div>
+      <div class="member reveal" onclick="openTeam('li')"><div class="photo"><img src="assets/team/lipeng.jpg" alt="李鹏"></div><div class="member-info"><h4>李鹏</h4><div class="role">主讲导师 · 马拉松冠军</div></div></div>
+      <div class="member reveal" onclick="openTeam('wang')"><div class="photo"><img src="assets/team/wangzhengdong.jpg" alt="王政东"></div><div class="member-info"><h4>王政东</h4><div class="role">主讲导师 · 越野跑者</div></div></div>
+      <div class="member reveal" onclick="openTeam('yu')"><div class="photo"><img src="assets/team/yumiao.jpg" alt="于淼"></div><div class="member-info"><h4>于淼</h4><div class="role">主讲导师 · 野外救援</div></div></div>
+      <div class="member reveal" onclick="openTeam('wei')"><div class="photo"><img src="assets/team/weiwenjing.jpg" alt="魏文静"></div><div class="member-info"><h4>魏文静</h4><div class="role">主讲导师 · 写作者</div></div></div>
+      <div class="member reveal" onclick="openTeam('lilin')"><div class="photo"><img src="assets/team/lixiaolin.jpg" alt="李晓林"></div><div class="member-info"><h4>李晓林</h4><div class="role">主讲导师 · 公益大使</div></div></div>
+      <div class="member reveal" onclick="openTeam('guan')"><div class="photo"><img src="assets/team/guanyueyue.jpg" alt="关玥玥"></div><div class="member-info"><h4>关玥玥</h4><div class="role">主讲导师 · 营养健康</div></div></div>
+      <div class="member reveal" onclick="openTeam('liums')"><div class="photo"><img src="assets/team/q_liumushan.jpg" alt="刘沐姗"></div><div class="member-info"><h4>刘沐姗</h4><div class="role">认证导师 · 医药/早教</div></div></div>
+      <div class="member reveal" onclick="openTeam('yang')"><div class="photo"><img src="assets/team/q_yangling.jpg" alt="杨玲"></div><div class="member-info"><h4>杨玲</h4><div class="role">认证导师 · 健身/普拉提</div></div></div>
+      <div class="member reveal" onclick="openTeam('song')"><div class="photo"><img src="assets/team/q_songdeyue.jpg" alt="宋德月"></div><div class="member-info"><h4>宋德月</h4><div class="role">认证导师 · 西点/营养</div></div></div>
     </div>
   </div>
 </section>
+
+<!-- 导师详情弹窗 -->
+<div class="tmodal" id="teamModal" onclick="if(event.target===this)closeTeam()">
+  <div class="tmodal-box">
+    <button class="tmodal-close" onclick="closeTeam()">✕</button>
+    <div class="tmodal-grid">
+      <div class="tmodal-photo"><img id="tmImg" src="" alt="导师照片"></div>
+      <div class="tmodal-body">
+        <span class="tag-en" id="tmEn"></span>
+        <h3 id="tmName"></h3>
+        <div class="role" id="tmRole"></div>
+        <ul id="tmBio"></ul>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- 案例 -->
 <section id="cases">
@@ -483,6 +531,40 @@ footer b{color:var(--txt)}
 function openModal(){document.getElementById('wechatModal').classList.add('open');document.body.style.overflow='hidden'}
 function closeModal(){document.getElementById('wechatModal').classList.remove('open');document.body.style.overflow=''}
 
+// ---- 导师数据 ----
+const TEAM={
+ cheng:{name:'程晓鹏',en:'Professional',img:'assets/team/chengxiaopeng.jpg',role:'上海应援时间急救培训中心主任 · 主讲导师 & 联合创始人',
+  bio:['美国心脏协会 AHA Heartsaver 主任导师（TCF）','美国注册财务策划师（RFP）','美国德克萨斯大学阿灵顿商学院（UTA）EMBA','复旦大学健康管理规划师','第十八届玄奘之路戈壁挑战赛 UTA 院校 B 队副队长','第十九届玄奘之路戈壁挑战赛 UTA 院校 B 队队长','第二十届玄奘之路戈壁挑战赛 UTA 院校装备组顾问','第二十一届玄奘之路戈壁挑战赛志愿救援队小组长','《玄奘之路》YOUNG 青少年戈赛第2、3届戈友导师','独立理财顾问协会会员（IFA）· 普动户外俱乐部户外领队']},
+ li:{name:'李鹏',en:'Passion & Expert',img:'assets/team/lipeng.jpg',role:'主讲导师 & 联合创始人',
+  bio:['美国心脏协会 AHA Heartsaver 导师','华东理工大学体育讲师','长江商学院高层管理教育（CKGSB EE）文创班','马拉松国家健将水平：半马 1:08:40 · 全马 PB 2:19:04','2016 国际田联钻石联赛上海站业余组 5000 米冠军','2017 长沙国际马拉松男子全程冠军','2018 岱山海峡两岸半马冠军 · 2019 奥跑中国苏州站10公里冠军','2019—2020 连续两年千岛湖男子全程马拉松冠军','2020 上海马拉松第六名（2:19:04）','2021 戈16老戈友组冠军（兼任长江商学院男队教练）· 2023 戈17 EE组冠军']},
+ wang:{name:'王政东',en:'Runner & Rescuer',img:'assets/team/wangzhengdong.jpg',role:'主讲导师 & 联合创始人',
+  bio:['美国心脏协会 AHA Heartsaver 导师','美国德克萨斯大学阿灵顿商学院 EMBA','8 年跑龄 · 参加超过 30 场马拉松赛事','连续五届玄奘之路商学院戈壁挑战赛参赛成员','第19届玄奘之路戈壁挑战赛 A+ 组（1天挑战121km）','2022 凯乐石莫干山越野赛 70K 商学院组第三名']},
+ yu:{name:'于淼',en:'Happy & Philanthropy',img:'assets/team/yumiao.jpg',role:'主讲导师 & 联合创始人',
+  bio:['美国心脏协会 AHA Heartsaver 导师','国际野外医学协会（WMAI）野外第一响应人（WFR）','第二十届、二十一届玄奘之路戈壁挑战赛志愿救援队队员','原复旦大学管理学院戈友会执行长','复旦大学管理学院户外运动协会志愿救援队队员','深圳国际公益学院 EMP 二十三期学员','中国心理学会心理咨询师']},
+ wei:{name:'魏文静',en:'Traveler & Writer',img:'assets/team/weiwenjing.jpg',role:'主讲导师 & 联合创始人',
+  bio:['美国心脏协会 AHA Heartsaver 导师','美国德克萨斯大学阿灵顿商学院 EMBA 2016秋季班','《文静品读红楼梦》作者','第十三届玄奘之路戈壁挑战赛 B 队队员','第十六届老A队 · 第十七、十八届 C 队队长','第十九届老A队 · 第二十届老A队领队','第二十一届玄奘之路志愿救援队队员']},
+ lilin:{name:'李晓林',en:'Unflappable & Food Tycoon',img:'assets/team/lixiaolin.jpg',role:'主讲导师 & 联合创始人',
+  bio:['美国心脏协会 AHA Heartsaver 导师','复旦大学 EMBA · 澳门大学 DBA 在读','北京戈友公益基金复旦大学专项基金理事','马拉松爱好者：半马 2:16:35 · 全马 PB 4:23:03','崇礼168越野赛100公里 · 凯乐石莫干山越野赛100公里完赛选手','第十九届玄奘之路戈壁挑战赛 A+ 队员','第二十届志愿救援队队员 · 第二十一届公益大使']},
+ guan:{name:'关玥玥',en:'Health',img:'assets/team/guanyueyue.jpg',role:'主讲导师 & 联合创始人',
+  bio:['美国心脏协会 AHA Heartsaver 导师','功能医学营养师 · 国家高级公共营养师','中国营养学会会员 · 美国营养学会会员','美国医学促进协会（ACAM）会员','斯坦福大学《儿童营养与烹饪》《食品与健康》课程认证','耶鲁大学《健康行为改变：从证据到行动》课程认证']},
+ liums:{name:'刘沐姗',en:'Team Member',img:'assets/team/q_liumushan.jpg',role:'上海应援时间急救培训中心 认证导师',
+  bio:['美国心脏协会 AHA Heartsaver 导师','康元医药有限公司副总经理','启思优幼早教中心创始人','原南京正大天晴上海地区医院部负责人']},
+ yang:{name:'杨玲',en:'Team Member',img:'assets/team/q_yangling.jpg',role:'上海应援时间急救培训中心 认证导师',
+  bio:['美国心脏协会 AHA Heartsaver 导师','欧嘉隆医药科技有限公司高级销售经理','健身教练 · 普拉提教练']},
+ song:{name:'宋德月',en:'Team Member',img:'assets/team/q_songdeyue.jpg',role:'上海应援时间急救培训中心 认证导师',
+  bio:['美国心脏协会 AHA Heartsaver 导师','国家高级西点师 · 西点培训师','国家三级公共营养师','上海米偶食品科技有限公司研发工程师']}
+};
+function openTeam(k){const t=TEAM[k];if(!t)return;
+ document.getElementById('tmImg').src=t.img;
+ document.getElementById('tmName').textContent=t.name;
+ document.getElementById('tmEn').textContent=t.en;
+ document.getElementById('tmRole').textContent=t.role;
+ document.getElementById('tmBio').innerHTML=t.bio.map(b=>'<li>'+b+'</li>').join('');
+ document.getElementById('teamModal').classList.add('open');
+ document.body.style.overflow='hidden'}
+function closeTeam(){document.getElementById('teamModal').classList.remove('open');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeTeam();closeModal()}});
+
 // ---- 滚动显现 ----
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
@@ -513,7 +595,7 @@ let off=0;
 (function draw(){
   const w=cv.offsetWidth,h=cv.offsetHeight;off+=2.2;
   cx.clearRect(0,0,w,h);
-  cx.strokeStyle='rgba(230,57,70,.85)';cx.lineWidth=2;cx.shadowColor='rgba(230,57,70,.8)';cx.shadowBlur=8;
+  cx.strokeStyle='rgba(232,54,63,.9)';cx.lineWidth=2;cx.shadowColor='rgba(232,54,63,.7)';cx.shadowBlur=8;
   cx.beginPath();
   for(let x=0;x<w;x++){const y=h/2+ecgY(x+off);x===0?cx.moveTo(x,y):cx.lineTo(x,y)}
   cx.stroke();
