@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>应援时间 Aid Time · 上海心脏急救培训 | AHA美国心脏协会会员单位</title>
+<meta name="description" content="上海应援时间医疗科技有限公司——美国心脏协会（AHA）会员单位，提供CPR+AED心肺复苏、First Aid急救等国际认证课程培训，AHA Heartsaver证书全球140余国认可。守护生命，从心开始。">
+<style>
+:root{
+  --red:#E63946; --red-deep:#C1121F; --red-dark:#9A0E1B;
+  --bg:#0A0E14; --bg2:#0F141D; --card:#141B26; --line:rgba(255,255,255,.08);
+  --txt:#EDF1F6; --sub:#94A1B2; --gold:#D8C58A;
+  --radius:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;overflow-x:hidden;line-height:1.7}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.en{font-family:Georgia,"Times New Roman",serif;letter-spacing:.14em;text-transform:uppercase;color:var(--red);font-size:13px;font-weight:600}
+h2.sec{font-size:34px;margin:10px 0 16px;line-height:1.3}
+.sec-head{text-align:center;margin-bottom:56px}
+.sec-head p{color:var(--sub);max-width:640px;margin:0 auto}
+section{padding:96px 0;position:relative}
+
+/* ---------- 导航 ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px);background:rgba(10,14,20,.72);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1180px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:34px}
+.nav-links{display:flex;gap:34px;font-size:15px}
+.nav-links a{color:var(--sub);transition:.25s}
+.nav-links a:hover{color:var(--txt)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 26px;border-radius:999px;font-size:15px;font-weight:600;cursor:pointer;border:none;transition:.25s}
+.btn-red{background:linear-gradient(135deg,var(--red),var(--red-deep));color:#fff;box-shadow:0 6px 24px rgba(230,57,70,.35)}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(230,57,70,.5)}
+.btn-ghost{background:transparent;color:var(--txt);border:1px solid rgba(255,255,255,.28)}
+.btn-ghost:hover{border-color:var(--red);color:var(--red)}
+@media(max-width:860px){.nav-links{display:none}}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 80px;background:radial-gradient(1000px 520px at 78% 18%,rgba(230,57,70,.16),transparent 62%),radial-gradient(700px 480px at 8% 88%,rgba(216,197,138,.07),transparent 60%),var(--bg)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;width:100%}
+.hero h1{font-size:56px;line-height:1.22;letter-spacing:.02em;margin:18px 0 22px}
+.hero h1 em{font-style:normal;color:var(--red);position:relative}
+.hero p.lead{color:var(--sub);font-size:18px;max-width:520px;margin-bottom:36px}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(230,57,70,.45);background:rgba(230,57,70,.1);color:#ffb3b8;padding:7px 16px;border-radius:999px;font-size:13.5px}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(230,57,70,.7);animation:pulse 1.6s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(230,57,70,0)}100%{box-shadow:0 0 0 0 rgba(230,57,70,0)}}
+.hero-visual{position:relative;display:flex;justify-content:center}
+.hero-visual .ring{position:absolute;inset:0;margin:auto;width:340px;height:340px;border:1px dashed rgba(230,57,70,.4);border-radius:50%;animation:spin 26s linear infinite}
+.hero-visual .ring2{width:440px;height:440px;border-color:rgba(216,197,138,.22);animation-duration:40s;animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-visual img.logo-main{width:290px;height:290px;border-radius:50%;box-shadow:0 24px 80px rgba(230,57,70,.28);position:relative;z-index:2}
+#ecg{position:absolute;left:0;right:0;bottom:-6px;width:100%;height:120px;opacity:.9;pointer-events:none}
+.scroll-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);color:var(--sub);font-size:12px;letter-spacing:.3em;writing-mode:vertical-rl;animation:floaty 2.4s ease-in-out infinite}
+@keyframes floaty{50%{transform:translate(-50%,8px)}}
+@media(max-width:960px){.hero-grid{grid-template-columns:1fr;text-align:center}.hero p.lead{margin-left:auto;margin-right:auto}.hero-cta{justify-content:center}.hero-visual{order:-1}.hero h1{font-size:40px}}
+
+/* ---------- 数据条 ---------- */
+.stats{background:linear-gradient(90deg,#12080b,var(--bg2));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.stat{text-align:center;padding:34px 12px;border-radius:var(--radius);background:rgba(255,255,255,.02);border:1px solid var(--line);transition:.3s}
+.stat:hover{border-color:rgba(230,57,70,.5);transform:translateY(-4px)}
+.stat b{font-size:40px;color:var(--red);font-variant-numeric:tabular-nums}
+.stat span{display:block;color:var(--sub);font-size:14px;margin-top:6px}
+@media(max-width:860px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- 关于 ---------- */
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.about-grid p{color:var(--sub);margin-bottom:16px}
+.value-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+.value{border:1px solid var(--line);border-radius:12px;padding:12px 20px;background:var(--card);font-size:14.5px}
+.value b{color:var(--gold);display:block;font-size:15px;margin-bottom:2px}
+.aha-card{background:linear-gradient(160deg,rgba(230,57,70,.14),rgba(216,197,138,.06));border:1px solid rgba(230,57,70,.35);border-radius:20px;padding:38px}
+.aha-card h3{font-size:22px;margin-bottom:14px}
+.aha-card li{list-style:none;color:var(--sub);padding:8px 0 8px 26px;position:relative;font-size:15px}
+.aha-card li::before{content:"";position:absolute;left:0;top:15px;width:10px;height:10px;border-radius:50%;border:2px solid var(--red)}
+.about-photos{display:flex;gap:16px;margin-top:26px}
+.about-photos img{border-radius:14px;border:1px solid var(--line);object-fit:cover}
+.about-photos img:first-child{flex:1.6;height:130px}
+.about-photos img:last-child{flex:1;height:130px}
+@media(max-width:960px){.about-grid{grid-template-columns:1fr}}
+
+/* ---------- 为什么学急救 ---------- */
+.why{background:var(--bg2)}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.why-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 24px;transition:.3s;position:relative;overflow:hidden}
+.why-card::after{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,var(--red),transparent);opacity:0;transition:.3s}
+.why-card:hover{transform:translateY(-6px);border-color:rgba(230,57,70,.45)}
+.why-card:hover::after{opacity:1}
+.why-card b{font-size:34px;color:var(--red);display:block;margin-bottom:8px}
+.why-card h4{font-size:16.5px;margin-bottom:8px}
+.why-card p{color:var(--sub);font-size:14px}
+.why-quote{margin-top:44px;text-align:center;color:var(--txt);font-size:20px}
+.why-quote em{color:var(--red);font-style:normal}
+@media(max-width:960px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.why-grid{grid-template-columns:1fr}}
+
+/* ---------- 课程 ---------- */
+.course-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.course{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+.course:hover{transform:translateY(-6px);border-color:rgba(230,57,70,.5);box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.course .banner{height:170px;overflow:hidden}
+.course .banner img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.course:hover .banner img{transform:scale(1.06)}
+.course-body{padding:32px 34px 34px;display:flex;flex-direction:column;flex:1}
+.course .tag{display:inline-block;background:rgba(230,57,70,.14);border:1px solid rgba(230,57,70,.5);color:#ffb3b8;font-size:12.5px;padding:4px 14px;border-radius:999px;margin-bottom:14px;width:fit-content}
+.course h3{font-size:24px;margin-bottom:4px}
+.course .dur{color:var(--gold);font-size:14px;margin-bottom:16px}
+.course li{list-style:none;color:var(--sub);font-size:14.5px;padding:5px 0 5px 22px;position:relative}
+.course li::before{content:"";position:absolute;left:2px;top:12px;width:8px;height:8px;border-radius:2px;background:var(--red)}
+.price-box{margin:20px 0 16px;border:1px dashed rgba(230,57,70,.45);border-radius:14px;padding:16px 20px;background:rgba(230,57,70,.06)}
+.price-row{display:flex;justify-content:space-between;align-items:baseline;padding:5px 0;font-size:14.5px;color:var(--sub)}
+.price-row b{font-size:19px;color:var(--txt)}
+.price-row .early b{color:var(--gold);font-size:16px}
+.price-note{font-size:12.5px;color:var(--sub);margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
+.cert-strip{display:flex;gap:16px;align-items:center;margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
+.cert-strip img{width:88px;border-radius:8px;border:1px solid var(--line)}
+.cert-strip p{font-size:12.5px;color:var(--sub);line-height:1.6}
+.audience{margin-top:44px}
+.audience h4{text-align:center;font-size:18px;margin-bottom:20px;color:var(--txt)}
+.chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:9px 20px;font-size:14px;color:var(--sub);transition:.25s}
+.chip:hover{border-color:var(--red);color:var(--txt)}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:44px}
+.feature{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:22px;font-size:14px;color:var(--sub)}
+.feature b{display:block;color:var(--txt);font-size:15px;margin-bottom:6px}
+.feature b::before{content:"✓ ";color:var(--red)}
+@media(max-width:960px){.course-grid,.feature-grid{grid-template-columns:1fr}}
+@media(min-width:961px) and (max-width:1100px){.feature-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- 活动 ---------- */
+.event{background:linear-gradient(160deg,#150b0e,var(--bg2));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.event-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.event-poster{position:relative;display:flex;justify-content:center}
+.event-poster img{width:min(340px,100%);border-radius:18px;border:1px solid rgba(216,197,138,.4);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.event-poster::before{content:"";position:absolute;inset:0;margin:auto;width:380px;height:380px;border:1px dashed rgba(230,57,70,.35);border-radius:50%;animation:spin 30s linear infinite}
+.event-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(216,197,138,.5);background:rgba(216,197,138,.08);color:var(--gold);padding:6px 16px;border-radius:999px;font-size:13px}
+.event h2{font-size:38px;margin:16px 0 10px}
+.event .date{color:var(--gold);font-size:17px;margin-bottom:18px}
+.event p.desc{color:var(--sub);max-width:520px;margin-bottom:26px}
+.event-stats{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:30px}
+.event-stat{border:1px solid var(--line);background:rgba(255,255,255,.02);border-radius:14px;padding:14px 22px;text-align:center}
+.event-stat b{display:block;font-size:26px;color:var(--red)}
+.event-stat span{font-size:12.5px;color:var(--sub)}
+@media(max-width:960px){.event-grid{grid-template-columns:1fr}.event h2{font-size:30px}}
+
+/* ---------- 导师 ---------- */
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.member{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 22px;text-align:center;transition:.3s}
+.member:hover{transform:translateY(-6px);border-color:rgba(230,57,70,.5)}
+.avatar{width:76px;height:76px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--red),var(--red-dark));box-shadow:0 8px 24px rgba(230,57,70,.3)}
+.member h4{font-size:17px}
+.member .role{color:var(--red);font-size:13px;margin:4px 0 10px}
+.member p{color:var(--sub);font-size:13px;line-height:1.6}
+@media(max-width:960px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- 合作 ---------- */
+.case-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.case{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 24px;transition:.3s}
+.case:hover{border-color:rgba(216,197,138,.5);transform:translateY(-5px)}
+.case .ic{width:46px;height:46px;border-radius:12px;background:rgba(216,197,138,.1);border:1px solid rgba(216,197,138,.35);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+.case h4{font-size:16px;margin-bottom:6px}
+.case p{color:var(--sub);font-size:13.5px}
+@media(max-width:960px){.case-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- 联系 ---------- */
+.contact{background:linear-gradient(160deg,#160a0d,var(--bg2));border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.contact-item{display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line)}
+.contact-item .ic{width:46px;height:46px;min-width:46px;border-radius:12px;background:rgba(230,57,70,.12);border:1px solid rgba(230,57,70,.4);display:flex;align-items:center;justify-content:center;font-size:20px}
+.contact-item b{display:block;font-size:15px;margin-bottom:2px}
+.contact-item span{color:var(--sub);font-size:15px}
+.qr-card{background:var(--card);border:1px solid rgba(230,57,70,.35);border-radius:20px;padding:34px;text-align:center}
+.qr-card img{width:220px;margin:0 auto 16px;border-radius:14px}
+.qr-card p{color:var(--sub);font-size:14px}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
+
+/* ---------- 弹窗 / 页脚 ---------- */
+.modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(5,8,12,.7);backdrop-filter:blur(6px)}
+.modal.open{display:flex}
+.modal-box{background:var(--bg2);border:1px solid rgba(230,57,70,.4);border-radius:20px;padding:36px;text-align:center;max-width:340px;width:88%}
+.modal-box img{width:210px;margin:0 auto 14px;border-radius:12px}
+.modal-box h3{margin-bottom:6px}
+.modal-box p{color:var(--sub);font-size:14px;margin-bottom:18px}
+.modal-close{margin-top:6px;background:transparent;border:1px solid var(--line);color:var(--sub);padding:9px 30px;border-radius:999px;cursor:pointer;font-size:14px}
+footer{padding:34px 0;border-top:1px solid var(--line);color:var(--sub);font-size:13.5px;text-align:center}
+footer b{color:var(--txt)}
+
+/* ---------- 动效 ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:all .8s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="#top"><img src="assets/wordmark.png" alt="Aid Time"></a>
+    <div class="nav-links">
+      <a href="#about">关于我们</a>
+      <a href="#courses">课程体系</a>
+      <a href="#event">近期活动</a>
+      <a href="#team">导师团队</a>
+      <a href="#contact">联系我们</a>
+    </div>
+    <button class="btn btn-red" onclick="openModal()">预约报名</button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="hero-badge"><span class="dot"></span>美国心脏协会（AHA）会员单位</span>
+      <h1>守护生命，<em>从心</em>开始<br>应援生命，<em>时间</em>至上</h1>
+      <p class="lead">上海应援时间医疗科技有限公司——专注心脏急救培训，提供 CPR+AED 心肺复苏、First Aid 急救等国际认证课程。理论结合实操，让你在紧急时刻，有能力为生命争取宝贵时间。</p>
+      <div class="hero-cta">
+        <button class="btn btn-red" onclick="openModal()">💬 添加客服微信 · 预约课程</button>
+        <a class="btn btn-ghost" href="#courses">查看课程体系</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="ring"></div><div class="ring ring2"></div>
+      <img class="logo-main" src="assets/logo.jpg" alt="Aid Time Logo">
+    </div>
+  </div>
+  <canvas id="ecg"></canvas>
+  <div class="scroll-hint">SCROLL</div>
+</header>
+
+<!-- 数据 -->
+<div class="stats">
+  <div class="wrap" style="padding-top:56px;padding-bottom:56px">
+    <div class="stats-grid">
+      <div class="stat reveal"><b><span class="count" data-to="55">0</span>万</b><span>我国每年心脏骤停死亡人数</span></div>
+      <div class="stat reveal"><b><span class="count" data-to="4">0</span>分钟</b><span>心脏骤停黄金救援时间</span></div>
+      <div class="stat reveal"><b>&lt;<span class="count" data-to="1">0</span>%</b><span>我国当前院外抢救存活率</span></div>
+      <div class="stat reveal"><b><span class="count" data-to="140">0</span>+国</b><span>AHA急救证书全球认可国家</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 关于 -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <div class="en">About Us</div>
+      <h2 class="sec">专业的急救培训<br>守护每一个关键时刻</h2>
+      <p>上海应援时间医疗科技有限公司是<strong style="color:var(--txt)">美国心脏协会（AHA）会员单位</strong>，提供专业的急救培训，涵盖心肺复苏（CPR）、创伤包扎、AED 急救设备使用等知识与技能。</p>
+      <p>培训采用理论与实践相结合的方式，注重实际操作和应急反应能力的培养，让学员在遇到紧急情况时能够迅速采取正确的急救措施，为生命争取宝贵的时间。</p>
+      <div class="value-row">
+        <div class="value"><b>专业</b>国际标准教学体系</div>
+        <div class="value"><b>创新</b>理论 + 实操场景演练</div>
+        <div class="value"><b>责任</b>公益先行 · 回馈社会</div>
+      </div>
+      <div class="about-photos">
+        <img src="assets/banner-cpr.jpg" alt="CPR实操演示">
+        <img src="assets/books.jpg" alt="AHA官方学员手册">
+      </div>
+    </div>
+    <div class="aha-card reveal">
+      <div class="en">AHA Authorized</div>
+      <h3>美国心脏协会（AHA）国际认证</h3>
+      <li>AHA 成立于 1924 年，是全球对公众急救培训最权威、最标准化的专业机构</li>
+      <li>其颁发的急救证书在全球 <b style="color:var(--red)">140 余个国家</b>获得认证</li>
+      <li>教材已翻译至 17 种语言，每年平均培训超过 1200 万名医护人员及公众人士</li>
+      <li>过去 10 年，心脏病死亡率在其推动下下降 30%</li>
+      <li>累计资助 13 位诺贝尔医学奖得主及挽救生命的科学技术</li>
+    </div>
+  </div>
+</section>
+
+<!-- 为什么 -->
+<section class="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="en">Why First Aid</div>
+      <h2 class="sec">为什么我们需要学习急救？</h2>
+      <p>急救不是医护人员的专利，而是每个人都应掌握的生命技能。</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal"><b>90%</b><h4>心脏骤停发生在医院外</h4><p>第一目击者往往是家人、同事或路人，而非专业医护。</p></div>
+      <div class="why-card reveal"><b>70%+</b><h4>发生在家里</h4><p>最爱的人倒下时，等救护车往往来不及，你能依靠的只有自己的双手。</p></div>
+      <div class="why-card reveal"><b>10分钟</b><h4>120难以到达的空白</h4><p>心脏骤停后每延迟1分钟，存活率下降7%~10%，专业救援到来前的空窗只能靠现场急救填补。</p></div>
+      <div class="why-card reveal"><b>&lt;1%</b><h4>我国当前存活率</h4><p>这个数字，应该被改变。普及公众急救技能刻不容缓。</p></div>
+    </div>
+    <p class="why-quote reveal">若躺下的这位是你的至亲、好友，你是否已有能力在 120 抵达前，<em>争分夺秒</em>进行施救？</p>
+  </div>
+</section>
+
+<!-- 课程 -->
+<section id="courses">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="en">Courses</div>
+      <h2 class="sec">AHA Heartsaver 国际认证课程</h2>
+      <p>AHA 推出、面向公众开放的国际认证课程。小班制教学，认证导师一对一手把手实操纠错，考核通过即获 AHA 国际证书（有效期 2 年）。</p>
+    </div>
+    <div class="course-grid">
+      <!-- 全天班 -->
+      <div class="course reveal">
+        <div class="banner"><img src="assets/banner-firstaid.jpg" alt="First Aid 急救"></div>
+        <div class="course-body">
+          <span class="tag">全天课程 · Full Day Course</span>
+          <h3>First Aid + CPR + AED</h3>
+          <div class="dur">🕘 全天制 · 中文 / 英文授课 · 国际证书</div>
+          <li><b style="color:var(--txt)">CPR + AED + 气道梗塞</b>：成人 / 儿童 / 婴儿心肺复苏，成人 / 儿童 AED 使用，各年龄段气道梗塞解除</li>
+          <li><b style="color:var(--txt)">First Aid 急救</b>：急救基础（个人防护、查找问题）、内科急症（呼吸困难、过敏、中风等）、外伤急症（止血包扎、骨折扭伤）、环境因素急症（叮咬蛰伤、中暑失温、中毒等）</li>
+          <div class="price-box">
+            <div class="price-row"><span>中文授课</span><b>¥1,000<small style="font-size:13px;color:var(--sub)"> /人</small></b></div>
+            <div class="price-row early"><span>提前1个月报名 · 早鸟价</span><b>¥800 /人</b></div>
+            <div class="price-row"><span>英文授课</span><b>¥1,200<small style="font-size:13px;color:var(--sub)"> /人</small></b></div>
+            <div class="price-row early"><span>英文早鸟价</span><b>¥1,000 /人</b></div>
+            <div class="price-row"><span>证书到期（2年）后复训</span><b>¥800 /人</b></div>
+            <div class="price-note">每节课限 18 个名额 · 报名不足 6 人顺延至下一期 · 名额以付款成功为准</div>
+          </div>
+          <div class="cert-strip">
+            <img src="assets/cert-firstaid.jpg" alt="AHA Heartsaver First Aid CPR AED 证书">
+            <p><b style="color:var(--txt)">Heartsaver First Aid CPR AED 证书</b><br>AHA Heartsaver 国际证书，有效期 2 年。证书在 140 余国获认可，可用于急救相关工作应聘、留学社会实践证明；依据中国《民法典》第 184 条「好人法」，持证施救享有免责保障。</p>
+          </div>
+          <div style="margin-top:18px"><button class="btn btn-red" style="width:100%;justify-content:center" onclick="openModal()">💬 咨询报名 · 获取最近开课时间</button></div>
+        </div>
+      </div>
+      <!-- 半天班 -->
+      <div class="course reveal">
+        <div class="banner"><img src="assets/banner-cpr.jpg" alt="CPR 心肺复苏"></div>
+        <div class="course-body">
+          <span class="tag">半天课程 · Half Day Course</span>
+          <h3>CPR + AED 心肺复苏</h3>
+          <div class="dur">🕐 半天制 · 中文 / 英文授课 · 国际证书</div>
+          <li><b style="color:var(--txt)">成人 CPR</b>：高质量心肺复苏标准流程与按压技术</li>
+          <li><b style="color:var(--txt)">成人 AED 使用</b>：自动体外除颤器规范操作</li>
+          <li><b style="color:var(--txt)">成人气道梗塞解除</b>：海姆立克急救法实操</li>
+          <div class="price-box">
+            <div class="price-row"><span>中文授课</span><b>¥800<small style="font-size:13px;color:var(--sub)"> /人</small></b></div>
+            <div class="price-row early"><span>提前1个月报名 · 早鸟价</span><b>¥600 /人</b></div>
+            <div class="price-row"><span>英文授课</span><b>¥1,000<small style="font-size:13px;color:var(--sub)"> /人</small></b></div>
+            <div class="price-row early"><span>英文早鸟价</span><b>¥800 /人</b></div>
+            <div class="price-row"><span>证书到期（2年）后复训</span><b>¥600 /人</b></div>
+            <div class="price-note">每节课限 18 个名额 · 报名不足 6 人顺延至下一期 · 名额以付款成功为准</div>
+          </div>
+          <div class="cert-strip">
+            <img src="assets/cert-cpr-aed.jpg" alt="AHA Heartsaver CPR AED 证书">
+            <p><b style="color:var(--txt)">Heartsaver CPR AED 证书</b><br>AHA Heartsaver 国际证书，有效期 2 年。专业救援人员必备技能证书之一，持证在国内外许多国家和地区享有救人免责权（《民法典》第 184 条「好人法」）。</p>
+          </div>
+          <div style="margin-top:18px"><button class="btn btn-red" style="width:100%;justify-content:center" onclick="openModal()">💬 咨询报名 · 获取最近开课时间</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="feature-grid reveal">
+      <div class="feature"><b>全球统一教材</b>AHA 官方教材与视频，中文 / 英文授课可选</div>
+      <div class="feature"><b>认证导师小班教学</b>美国心脏协会认证专业导师一对一手把手指导</div>
+      <div class="feature"><b>大量实操演练</b>模拟真实场景反复练习，考核通过率高</div>
+      <div class="feature"><b>场景覆盖全面</b>涵盖家庭急救、企事业单位常见急症识别与处理</div>
+    </div>
+    <div class="audience reveal">
+      <h4>课程适用人群</h4>
+      <div class="chips">
+        <span class="chip">赛事急救保障志愿者</span>
+        <span class="chip">家有心脏病老人与小孩的家庭</span>
+        <span class="chip">马拉松跑者 / 健身 / 游泳教练</span>
+        <span class="chip">极限运动爱好者</span>
+        <span class="chip">高压 / 高危从业者</span>
+        <span class="chip">院校教职工与学生</span>
+        <span class="chip">保姆 / 育婴师 / 月嫂 / 幼师 / 护工</span>
+        <span class="chip">公共场所工作人员</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 近期活动 -->
+<section class="event" id="event">
+  <div class="wrap event-grid">
+    <div class="event-poster reveal">
+      <img src="assets/event-cpr.jpg" alt="一分钟高质量CPR挑战赛海报">
+    </div>
+    <div class="reveal">
+      <span class="event-badge">🔥 正在报名 · 公益挑战</span>
+      <h2>一分钟高质量<br>CPR 挑战赛</h2>
+      <div class="date">2026.10.16 — 12.31 · 世界重启心脏日</div>
+      <p class="desc">一场关于生命的挑战。用一分钟的高质量胸外按压，检验你的急救技能——实时排行榜、电子证书，让世界重启心脏日因你而不同。</p>
+      <div class="event-stats">
+        <div class="event-stat"><b>2-3倍</b><span>立即CPR可提升的生存机会</span></div>
+        <div class="event-stat"><b>&lt;1%</b><span>我国当前院外抢救成功率</span></div>
+        <div class="event-stat"><b>55万</b><span>我国每年心脏骤停人数</span></div>
+      </div>
+      <div class="hero-cta">
+        <button class="btn btn-red" onclick="openModal()">💬 添加客服微信 · 报名挑战</button>
+        <a class="btn btn-ghost" href="#contact">了解详情</a>
+      </div>
+      <p style="font-size:12px;color:var(--sub);margin-top:16px">数据参考：AHA 2025 指南发布说明 · 2025 成人基础生命支持指南</p>
+    </div>
+  </div>
+</section>
+
+<!-- 导师 -->
+<section id="team" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="en">Instructor Team</div>
+      <h2 class="sec">导师团队</h2>
+      <p>由美国心脏协会 AHA Heartsaver 认证导师领衔，兼具专业急救资质、丰富赛事保障经验与公益热忱。</p>
+    </div>
+    <div class="team-grid">
+      <div class="member reveal"><div class="avatar">程</div><h4>程晓鹏</h4><div class="role">培训中心主任 · TCF 主任导师</div><p>AHA Heartsaver 主任导师（TCF），上海应援时间急救培训中心主讲导师 & 联合创始人，复旦健康管理规划师，多届玄奘之路戈壁挑战赛领队。</p></div>
+      <div class="member reveal"><div class="avatar">李</div><h4>李鹏</h4><div class="role">主讲导师 · 马拉松冠军</div><p>AHA Heartsaver 导师，华东理工大学体育讲师，马拉松国家健将水平，全马 PB 2:19:04，长沙国际马拉松男子全程冠军。</p></div>
+      <div class="member reveal"><div class="avatar">王</div><h4>王政东</h4><div class="role">主讲导师 · 越野跑者</div><p>AHA Heartsaver 导师，8年跑龄、30余场马拉松完赛，玄奘之路戈壁挑战赛 A+ 组（单日121km）完赛者。</p></div>
+      <div class="member reveal"><div class="avatar">于</div><h4>于淼</h4><div class="role">主讲导师 · 野外救援</div><p>AHA Heartsaver 导师，WMAI 野外第一响应人（WFR），玄奘之路志愿救援队队员，国家二级心理咨询师。</p></div>
+      <div class="member reveal"><div class="avatar">魏</div><h4>魏文静</h4><div class="role">主讲导师 · 写作者</div><p>AHA Heartsaver 导师，著有《文静品读红楼梦》，多届玄奘之路戈壁挑战赛队长、老A队领队。</p></div>
+      <div class="member reveal"><div class="avatar">李</div><h4>李晓林</h4><div class="role">主讲导师 · 公益大使</div><p>AHA Heartsaver 导师，复旦 EMBA，崇礼168越野赛100公里、莫干山越野赛100公里完赛选手，戈壁挑战赛公益大使。</p></div>
+      <div class="member reveal"><div class="avatar">关</div><h4>关玥玥</h4><div class="role">主讲导师 · 营养健康</div><p>AHA Heartsaver 导师，功能医学营养师，斯坦福、耶鲁健康课程认证，中国营养学会会员。</p></div>
+      <div class="member reveal"><div class="avatar">团队</div><h4>更多认证导师</h4><div class="role">刘沐姗 · 杨玲 · 宋德月</div><p>均为 AHA Heartsaver 认证导师，覆盖医药、幼教、健身、营养等多领域背景，提供小班精细化教学。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 案例 -->
+<section id="cases">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="en">Partners</div>
+      <h2 class="sec">服务与合作</h2>
+      <p>深入企业、院校、社区与大型会展，让急救知识走进更多场景。</p>
+    </div>
+    <div class="case-grid">
+      <div class="case reveal"><div class="ic">🏥</div><h4>Heartsaver 急救培训</h4><p>走进第一医药商厦（南京路步行街），为一线员工开展国际认证急救培训。</p></div>
+      <div class="case reveal"><div class="ic">🎓</div><h4>中欧商学院 AMP</h4><p>参与中欧商学院第9届 AMP 24小时营地节，提供全程急救普及保障。</p></div>
+      <div class="case reveal"><div class="ic">🚗</div><h4>奔驰 × INLOEVE</h4><p>星驰网球「电动未来」活动急救普及，为品牌活动提供现场医疗保障支持。</p></div>
+      <div class="case reveal"><div class="ic">🏘️</div><h4>斜土街道社区公益</h4><p>深入社区开展急救普及公益活动，让更多人掌握救命技能，回馈社会。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 联系 -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="en">Contact</div>
+      <h2 class="sec">预约培训 · 咨询合作</h2>
+      <p>企业内训、团体课程、赛事保障、公益活动合作均可咨询，我们会尽快与您联系。</p>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-item"><div class="ic">📞</div><div><b>咨询热线</b><span>193 7290 1007</span></div></div>
+        <div class="contact-item"><div class="ic">✉️</div><div><b>电子邮箱</b><span>shanghai-aidtime@qq.com</span></div></div>
+        <div class="contact-item"><div class="ic">💬</div><div><b>客服微信</b><span>Aid-Time-Heart（长按识别右侧二维码添加）</span></div></div>
+        <div class="contact-item" style="border-bottom:none"><div class="ic">📍</div><div><b>公司总部</b><span>上海 · 应援时间</span></div></div>
+      </div>
+      <div class="qr-card reveal">
+        <img src="assets/wechat-qr.png" alt="客服微信二维码">
+        <p>扫码添加客服微信<br>回复「课程」获取最新开课时间与报名方式</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>上海应援时间医疗科技有限公司</b> · Shanghai Aid Time Medical Technology Co., Ltd.<br>
+    美国心脏协会（AHA）会员单位 ｜ 守护生命，从心开始 ｜ Guard Life, From Heart!<br>
+    © 2026 Aid Time · 本页面信息仅用于品牌展示
+  </div>
+</footer>
+
+<!-- 微信弹窗 -->
+<div class="modal" id="wechatModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <h3>添加客服微信</h3>
+    <p>微信号：<b style="color:var(--red)">Aid-Time-Heart</b></p>
+    <img src="assets/wechat-qr.png" alt="微信二维码">
+    <p>扫码或搜索微信号添加<br>回复「课程」获取开课信息</p>
+    <button class="modal-close" onclick="closeModal()">关 闭</button>
+  </div>
+</div>
+
+<script>
+// ---- 微信弹窗 ----
+function openModal(){document.getElementById('wechatModal').classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(){document.getElementById('wechatModal').classList.remove('open');document.body.style.overflow=''}
+
+// ---- 滚动显现 ----
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// ---- 数字滚动 ----
+const co=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;const el=e.target;co.unobserve(el);
+  const to=parseFloat(el.dataset.to),dec=parseInt(el.dataset.dec||0);let t0=null;
+  function step(ts){if(!t0)t0=ts;const p=Math.min((ts-t0)/1400,1);const ease=1-Math.pow(1-p,3);
+    el.textContent=(to*ease).toFixed(dec);if(p<1)requestAnimationFrame(step);else el.textContent=to.toFixed(dec)}
+  requestAnimationFrame(step)}),{threshold:.6});
+document.querySelectorAll('.count').forEach(el=>co.observe(el));
+
+// ---- ECG 心电图动画 ----
+const cv=document.getElementById('ecg'),cx=cv.getContext('2d');
+function resize(){cv.width=cv.offsetWidth*devicePixelRatio;cv.height=cv.offsetHeight*devicePixelRatio;cx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}
+resize();addEventListener('resize',resize);
+function ecgY(x){const t=(x%280)/280;
+  if(t<.08)return Math.sin(t/.08*Math.PI)*6;
+  if(t<.14)return 0;
+  if(t<.17)return -14*(t-.14)/.03;
+  if(t<.20)return -14+26*(t-.17)/.03;
+  if(t<.23)return 12-32*(t-.20)/.03;
+  if(t<.30)return -20*(1-(t-.23)/.07);
+  if(t<.55)return Math.sin((t-.30)/.25*Math.PI)*10;
+  return 0}
+let off=0;
+(function draw(){
+  const w=cv.offsetWidth,h=cv.offsetHeight;off+=2.2;
+  cx.clearRect(0,0,w,h);
+  cx.strokeStyle='rgba(230,57,70,.85)';cx.lineWidth=2;cx.shadowColor='rgba(230,57,70,.8)';cx.shadowBlur=8;
+  cx.beginPath();
+  for(let x=0;x<w;x++){const y=h/2+ecgY(x+off);x===0?cx.moveTo(x,y):cx.lineTo(x,y)}
+  cx.stroke();
+  requestAnimationFrame(draw)})();
+</script>
+</body>
+</html>
