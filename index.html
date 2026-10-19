@@ -245,7 +245,6 @@ footer b{color:var(--txt)}
 <header class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <span class="hero-badge"><span class="dot"></span>美国心脏协会（AHA）会员单位</span>
       <h1>守护生命，<em>从心</em>开始<br>应援生命，<em>时间</em>至上</h1>
       <p class="lead">上海应援时间医疗科技有限公司——专注心脏急救培训，提供 CPR+AED 心肺复苏、First Aid 急救等国际认证课程。理论结合实操，让你在紧急时刻，有能力为生命争取宝贵时间。</p>
       <div class="hero-cta">
@@ -447,6 +446,7 @@ footer b{color:var(--txt)}
       <div class="member reveal" onclick="openTeam('liums')"><div class="photo"><img src="assets/team/q_liumushan.jpg" alt="刘沐姗"></div><div class="member-info"><h4>刘沐姗</h4><div class="role">认证导师 · 医药/早教</div></div></div>
       <div class="member reveal" onclick="openTeam('yang')"><div class="photo"><img src="assets/team/q_yangling.jpg" alt="杨玲"></div><div class="member-info"><h4>杨玲</h4><div class="role">认证导师 · 健身/普拉提</div></div></div>
       <div class="member reveal" onclick="openTeam('song')"><div class="photo"><img src="assets/team/q_songdeyue.jpg" alt="宋德月"></div><div class="member-info"><h4>宋德月</h4><div class="role">认证导师 · 西点/营养</div></div></div>
+      <div class="member reveal" onclick="openTeam('yao')"><div class="photo"><img src="assets/team/yao.jpg" alt="姚伟权"></div><div class="member-info"><h4>姚伟权</h4><div class="role">认证导师 · 铁三/游泳/跑步</div></div></div>
     </div>
   </div>
 </section>
@@ -462,6 +462,7 @@ footer b{color:var(--txt)}
         <h3 id="tmName"></h3>
         <div class="role" id="tmRole"></div>
         <ul id="tmBio"></ul>
+        <img id="tmImg2" src="" alt="" style="display:none;width:100%;border-radius:12px;margin-top:18px">
       </div>
     </div>
   </div>
@@ -507,11 +508,14 @@ footer b{color:var(--txt)}
   </div>
 </section>
 
+<div style="text-align:center;padding:48px 24px 8px;background:var(--bg)">
+  <img src="assets/footer-slogan.jpg" alt="致力于心脏急救（AHA）认证课程 以专业守护生命，以教育传递希望" style="max-width:680px;width:100%;margin:0 auto;border-radius:14px">
+</div>
 <footer>
   <div class="wrap">
     <b>上海应援时间医疗科技有限公司</b> · Shanghai Aid Time Medical Technology Co., Ltd.<br>
-    美国心脏协会（AHA）会员单位 ｜ 守护生命，从心开始 ｜ Guard Life, From Heart!<br>
-    © 2026 Aid Time · 本页面信息仅用于品牌展示
+    守护生命，从心开始 ｜ Guard Life, From Heart!<br>
+    © 2026 上海应援时间医疗科技有限公司 · Shanghai Aid Time
   </div>
 </footer>
 
@@ -551,6 +555,8 @@ const TEAM={
   bio:['美国心脏协会 AHA Heartsaver 导师','康元医药有限公司副总经理','启思优幼早教中心创始人','原南京正大天晴上海地区医院部负责人']},
  yang:{name:'杨玲',en:'Team Member',img:'assets/team/q_yangling.jpg',role:'上海应援时间急救培训中心 认证导师',
   bio:['美国心脏协会 AHA Heartsaver 导师','欧嘉隆医药科技有限公司高级销售经理','健身教练 · 普拉提教练']},
+ yao:{name:'姚伟权',en:'Triathlon & Charity',img:'assets/team/yao.jpg',img2:'assets/team/yao2.jpg',role:'上海应援时间急救培训中心 认证导师',
+  bio:['美国心脏协会 AHA Heartsaver 导师','中国红十字会初级救护员','Tesla 资深技术团队','铁人三项爱好者 · 游泳爱好者 · 跑步爱好者','热心公益事业']},
  song:{name:'宋德月',en:'Team Member',img:'assets/team/q_songdeyue.jpg',role:'上海应援时间急救培训中心 认证导师',
   bio:['美国心脏协会 AHA Heartsaver 导师','国家高级西点师 · 西点培训师','国家三级公共营养师','上海米偶食品科技有限公司研发工程师']}
 };
@@ -560,6 +566,8 @@ function openTeam(k){const t=TEAM[k];if(!t)return;
  document.getElementById('tmEn').textContent=t.en;
  document.getElementById('tmRole').textContent=t.role;
  document.getElementById('tmBio').innerHTML=t.bio.map(b=>'<li>'+b+'</li>').join('');
+ const im2=document.getElementById('tmImg2');
+ if(t.img2){im2.src=t.img2;im2.style.display='block'}else{im2.style.display='none'}
  document.getElementById('teamModal').classList.add('open');
  document.body.style.overflow='hidden'}
 function closeTeam(){document.getElementById('teamModal').classList.remove('open');document.body.style.overflow=''}
