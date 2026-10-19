@@ -106,6 +106,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px);b
 
 /* ---------- 课程 ---------- */
 .course-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.course-grid>.course:last-child{grid-column:1/-1}
 .course{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.3s;display:flex;flex-direction:column;box-shadow:var(--shadow)}
 .course:hover{transform:translateY(-6px);border-color:rgba(232,54,63,.5);box-shadow:0 26px 60px rgba(232,54,63,.16)}
 .course .banner{height:170px;overflow:hidden}
@@ -375,6 +376,27 @@ footer b{color:var(--txt)}
           <div class="cert-strip">
             <img src="assets/cert-cpr-aed.jpg" alt="AHA Heartsaver CPR AED 证书">
             <p><b style="color:var(--txt)">Heartsaver CPR AED 证书</b><br>AHA Heartsaver 国际证书，有效期 2 年。专业救援人员必备技能证书之一，持证在国内外许多国家和地区享有救人免责权（《民法典》第 184 条「好人法」）。</p>
+          </div>
+          <div style="margin-top:18px"><button class="btn btn-red" style="width:100%;justify-content:center" onclick="openModal()">💬 咨询报名 · 获取最近开课时间</button></div>
+        </div>
+      </div>
+      <!-- 导师班 -->
+      <div class="course reveal">
+        <div class="banner"><img src="assets/banner-brand.jpg" alt="Heartsaver Instructor 导师课程"></div>
+        <div class="course-body">
+          <span class="tag">导师课程 · Instructor Course</span>
+          <h3>Heartsaver 导师班</h3>
+          <div class="dur">🕐 1天（8小时） · 面向已认证 HS 学员 · 国际导师证书</div>
+          <li><b style="color:var(--txt)">招生对象</b>：已持有 AHA Heartsaver 学员证书（CPR AED / First Aid CPR AED）的学员</li>
+          <li><b style="color:var(--txt)">培养目标</b>：系统提升授课技巧、课程组织与技能考核评估能力</li>
+          <li><b style="color:var(--txt)">教学实践</b>：完成课程督导与考核后，取得导师资格，可按 AHA 标准独立开展 Heartsaver 课程教学</li>
+          <div class="price-box">
+            <div class="price-row"><span>课程费用</span><b>¥3,980<small style="font-size:13px;color:var(--sub)"> /人</small></b></div>
+            <div class="price-note">小班授课 · 名额有限 · 名额以付款成功为准</div>
+          </div>
+          <div class="cert-strip">
+            <img src="assets/cert-instructor.jpg" alt="AHA Heartsaver Instructor 导师证书">
+            <p><b style="color:var(--txt)">Heartsaver Instructor 导师证书</b><br>美国心脏协会 Heartsaver Instructor 导师资格认证。取得资格后可按 AHA 标准开展 Heartsaver 系列课程教学与学员考核，是成为 AHA 认证培训导师的必经之路。</p>
           </div>
           <div style="margin-top:18px"><button class="btn btn-red" style="width:100%;justify-content:center" onclick="openModal()">💬 咨询报名 · 获取最近开课时间</button></div>
         </div>
