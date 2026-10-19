@@ -210,6 +210,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px);b
 .qr-card p{color:var(--sub);font-size:14px}
 @media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
 
+
+/* ---------- 证书悬停放大 ---------- */
+.cert-strip img{cursor:zoom-in}
+#certPreview{position:fixed;z-index:400;display:none;pointer-events:none;background:#fff;padding:10px;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.35);border:1px solid var(--line)}
+#certPreview img{width:min(540px,86vw);border-radius:8px}
+.lightbox{position:fixed;inset:0;z-index:500;display:none;align-items:center;justify-content:center;background:rgba(40,20,25,.72);backdrop-filter:blur(6px);cursor:zoom-out;padding:20px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:90vh;border-radius:14px;background:#fff;padding:10px}
+
 /* ---------- 弹窗 / 页脚 ---------- */
 .modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(51,26,32,.5);backdrop-filter:blur(6px)}
 .modal.open{display:flex}
@@ -548,6 +557,9 @@ footer b{color:var(--txt)}
   </div>
 </footer>
 
+<!-- 证书大图灯箱 -->
+<div class="lightbox" id="imgLightbox" onclick="this.classList.remove('open');document.body.style.overflow=''"><img src="" alt="证书大图"></div>
+
 <!-- 微信弹窗 -->
 <div class="modal" id="wechatModal" onclick="if(event.target===this)closeModal()">
   <div class="modal-box">
@@ -560,6 +572,19 @@ footer b{color:var(--txt)}
 </div>
 
 <script>
+// ---- 证书悬停放大 ----
+const cp=document.createElement('div');cp.id='certPreview';document.body.appendChild(cp);
+document.querySelectorAll('.cert-strip img').forEach(img=>{
+  img.addEventListener('mouseenter',()=>{cp.innerHTML='<img src="'+img.src+'" alt="">';cp.style.display='block'});
+  img.addEventListener('mousemove',e=>{const w=cp.offsetWidth,h=cp.offsetHeight;let x=e.clientX+20,y=e.clientY+20;
+    if(x+w>innerWidth-12)x=e.clientX-w-20;if(y+h>innerHeight-12)y=innerHeight-h-12;if(y<12)y=12;
+    cp.style.left=x+'px';cp.style.top=y+'px'});
+  img.addEventListener('mouseleave',()=>cp.style.display='none');
+  img.addEventListener('click',()=>{cp.style.display='none';
+    const lb=document.getElementById('imgLightbox');lb.querySelector('img').src=img.src;
+    lb.classList.add('open');document.body.style.overflow='hidden'});
+});
+
 // ---- 微信弹窗 ----
 function openModal(){document.getElementById('wechatModal').classList.add('open');document.body.style.overflow='hidden'}
 function closeModal(){document.getElementById('wechatModal').classList.remove('open');document.body.style.overflow=''}
