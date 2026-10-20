@@ -230,6 +230,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px);b
 footer{padding:34px 0;border-top:1px solid var(--line);color:var(--sub);font-size:13.5px;text-align:center}
 footer b{color:var(--txt)}
 
+/* ---------- 挑战赛报名 ---------- */
+.session-list{display:flex;flex-direction:column;gap:16px;margin-bottom:28px}
+.session-card{background:#fff;border:1.5px solid rgba(232,54,63,.28);border-radius:16px;padding:20px 22px 16px;box-shadow:var(--shadow);position:relative}
+.session-card .s-badge{position:absolute;top:-12px;left:18px;background:linear-gradient(120deg,var(--red),var(--coral));color:#fff;font-size:12px;font-weight:700;padding:3px 14px;border-radius:999px;box-shadow:0 6px 16px rgba(232,54,63,.3)}
+.session-card .s-badge.gold{background:linear-gradient(120deg,var(--gold),var(--gold-deep));box-shadow:0 6px 16px rgba(240,169,59,.35)}
+.session-card b{font-size:16.5px;display:block;margin:6px 0 4px}
+.session-card p{color:var(--sub);font-size:14px;line-height:1.8}
+.reg-tel{margin-top:16px;font-size:14px;color:var(--sub)}
+.reg-tel b{color:var(--red-deep)}
+
+.reg-modal{position:fixed;inset:0;z-index:260;display:none;align-items:center;justify-content:center;background:rgba(51,26,32,.55);backdrop-filter:blur(6px);padding:20px}
+.reg-modal.open{display:flex}
+.reg-box{background:#fff;border-radius:22px;max-width:720px;width:100%;max-height:92vh;overflow:hidden;position:relative;box-shadow:0 40px 100px rgba(0,0,0,.3);animation:pop .3s cubic-bezier(.2,.8,.3,1.2)}
+.reg-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;border:none;background:rgba(255,255,255,.95);color:var(--txt);font-size:18px;cursor:pointer;z-index:5;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.reg-close:hover{background:var(--red);color:#fff}
+.reg-frame{width:100%;height:min(86vh,900px);border:0;display:block;border-radius:22px;background:#fff}
+
 /* ---------- 动效 ---------- */
 .reveal{opacity:0;transform:translateY(28px);transition:all .8s cubic-bezier(.2,.7,.3,1)}
 .reveal.in{opacity:1;transform:none}
@@ -442,17 +459,30 @@ footer b{color:var(--txt)}
     <div class="reveal">
       <span class="event-badge">🔥 正在报名 · 公益挑战</span>
       <h2>一分钟高质量<br>CPR 挑战赛</h2>
-      <div class="date">2026.10.16 — 12.31 · 世界重启心脏日</div>
+      <div class="date">2026.10.16 — 12.31 · 世界重启心脏日 · 上海专场</div>
       <p class="desc">一场关于生命的挑战。用一分钟的高质量胸外按压，检验你的急救技能——实时排行榜、电子证书，让世界重启心脏日因你而不同。</p>
+      <div class="session-list">
+        <div class="session-card">
+          <span class="s-badge">首场</span>
+          <b>上海专场 · 首场</b>
+          <p>🕗 10/16（周五）20:00—21:00<br>📍 润格学社 · 上海市徐汇区斜土路2354号4号楼101-201</p>
+        </div>
+        <div class="session-card">
+          <span class="s-badge gold">第二场</span>
+          <b>上海专场 · 第二场</b>
+          <p>🕢 10/20（周二）19:30—20:30<br>📍 润格学社 · 上海市徐汇区斜土路2354号4号楼101-201</p>
+        </div>
+      </div>
       <div class="event-stats">
         <div class="event-stat"><b>2-3倍</b><span>立即CPR可提升的生存机会</span></div>
         <div class="event-stat"><b>&lt;1%</b><span>我国当前院外抢救成功率</span></div>
         <div class="event-stat"><b>55万</b><span>我国每年心脏骤停人数</span></div>
       </div>
       <div class="hero-cta">
-        <button class="btn btn-red" onclick="openModal()">💬 添加客服微信 · 报名挑战</button>
-        <a class="btn btn-ghost" href="#contact">了解详情</a>
+        <button class="btn btn-red" onclick="openReg()">🏁 立即报名 · 参加挑战</button>
+        <button class="btn btn-ghost" onclick="openModal()">💬 微信咨询</button>
       </div>
+      <p class="reg-tel">赛事咨询电话：<b>19372901007</b></p>
       <p style="font-size:12px;color:var(--sub);margin-top:16px">数据参考：AHA 2025 指南发布说明 · 2025 成人基础生命支持指南</p>
     </div>
   </div>
@@ -560,6 +590,14 @@ footer b{color:var(--txt)}
 <!-- 证书大图灯箱 -->
 <div class="lightbox" id="imgLightbox" onclick="this.classList.remove('open');document.body.style.overflow=''"><img src="" alt="证书大图"></div>
 
+<!-- CPR 挑战赛报名弹窗（金数据表单嵌入） -->
+<div class="reg-modal" id="regModal" onclick="if(event.target===this)closeReg()">
+  <div class="reg-box">
+    <button class="reg-close" onclick="closeReg()">✕</button>
+    <iframe id="regFrame" class="reg-frame" title="1分钟高质量胸外按压挑战赛 · 上海专场报名表"></iframe>
+  </div>
+</div>
+
 <!-- 微信弹窗 -->
 <div class="modal" id="wechatModal" onclick="if(event.target===this)closeModal()">
   <div class="modal-box">
@@ -584,6 +622,15 @@ document.querySelectorAll('.cert-strip img').forEach(img=>{
     const lb=document.getElementById('imgLightbox');lb.querySelector('img').src=img.src;
     lb.classList.add('open');document.body.style.overflow='hidden'});
 });
+
+// ---- CPR 挑战赛报名（金数据表单嵌入） ----
+const REG_FORM_URL='https://jsj.top/f/FkWlM3';
+function openReg(){
+  const fr=document.getElementById('regFrame');
+  if(!fr.src)fr.src=REG_FORM_URL;
+  document.getElementById('regModal').classList.add('open');
+  document.body.style.overflow='hidden'}
+function closeReg(){document.getElementById('regModal').classList.remove('open');document.body.style.overflow=''}
 
 // ---- 微信弹窗 ----
 function openModal(){document.getElementById('wechatModal').classList.add('open');document.body.style.overflow='hidden'}
@@ -625,7 +672,7 @@ function openTeam(k){const t=TEAM[k];if(!t)return;
  document.getElementById('teamModal').classList.add('open');
  document.body.style.overflow='hidden'}
 function closeTeam(){document.getElementById('teamModal').classList.remove('open');document.body.style.overflow=''}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeTeam();closeModal()}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeTeam();closeModal();closeReg()}});
 
 // ---- 滚动显现 ----
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
@@ -664,4 +711,4 @@ let off=0;
   requestAnimationFrame(draw)})();
 </script>
 </body>
-</html>
+      </html>
